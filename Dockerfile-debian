@@ -5,10 +5,10 @@
 # Like normal Dockerfile, but based on python:slim (Debian) to ease compliance
 
 # Create a base image that has dependencies installed.
-FROM python:slim-buster AS base
+FROM python:slim AS base
 
 RUN apt-get update \
-    && apt-get install -y git mercurial python3 \
+    && apt-get install -y git mercurial \
     && rm -rf /var/lib/apt/lists/*
 
 # Build reuse into a virtualenv
